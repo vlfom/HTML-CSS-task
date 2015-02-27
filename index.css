@@ -1,0 +1,1288 @@
+@font-face {
+    font-weight: 200;
+    font-family: 'Aller';
+    src: url('fonts/Aller_Rg.ttf');
+}
+@font-face {
+    font-weight: 200;
+    font-family: 'AllerBold';
+    src: url('fonts/Aller_Bd.ttf');
+}
+@font-face {
+    font-weight: 200;
+    font-family: 'AllerItalic';
+    src: url('fonts/Aller_It.ttf');
+}
+@font-face {
+    font-weight: 200;
+    font-family: 'AllerLight';
+    src: url('fonts/Aller_Lt.ttf');
+}
+* {
+    padding: 0 ;
+    margin: 0 ;
+    font-size: 0 ;
+
+    -moz-user-select: none ;
+    -ms-user-select: none ;
+    -webkit-user-select: none ;
+    user-select: none ;
+
+    font-family: Aller, monospace ;
+
+    outline: none ;
+}
+
+a {
+    z-index: 100 ;
+
+    text-decoration: none ;
+    color: inherit ;
+}
+
+img {
+    pointer-events: none ;
+}
+
+html {
+    width: 100% ;
+    height: 100% ;
+
+    background: lightcyan ;
+}
+
+header {
+    background: rgb( 36, 36, 36 ) ;
+    width: 100% ;
+    height: 45px ;
+
+    text-align: center ;
+}
+
+.header-content {
+    background-color: rgb( 36, 36, 36 ) ;
+
+    width: 960px ;
+    height: 100% ;
+
+    position: relative ;
+    display: inline-block ;
+}
+
+p.header-logo {
+    font-family: Aller, monospace ;
+    font-size: 25px ;
+    color: rgb( 87, 197, 160 ) ;
+
+    position: absolute ;
+    top: 18% ; left: 10px ;
+    vertical-align: middle ;
+    margin: auto ; padding: auto ;
+
+    cursor: default ;
+}
+
+#checkbox {
+    position: absolute ;
+    top: 14px ; right: 180px ;
+
+    z-index: 1 ;
+    opacity: 0 ;
+
+    cursor: pointer ;
+}
+
+#checkbox:checked, #checkbox:checked ~ #header-search {
+    transform: translateX( -150px ) ;
+}
+
+#checkbox:checked ~ #header-search-text {
+    transition: all 0.2s linear ;
+    opacity: 1 ;
+
+    cursor: text ;
+    content: none ;
+}
+
+#header-search {
+    background: url('assets/search_icon.png') ;
+    position: absolute ;
+    top: 15px ; right: 180px ;
+
+    height: 14px ;
+    width: 14px ;
+    margin: auto ;
+
+    transition: all 0.2s linear ;
+    transform: translateX(0) ;
+}
+
+#header-search-text {
+    position: absolute ;
+    right: 180px ; bottom: 12px ;
+
+    color: white ; font-size: 12px ;
+
+    background-color: transparent;
+    border: none ;
+    border-bottom: 1px solid rgba(200,200,200,0.5) ;
+    width: 142px ; height: 50% ;
+
+    transition: none ;
+    opacity: 0 ;
+
+    cursor: default ;
+
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+header a.button-register {
+    position: absolute ;
+    right: 0 ;
+    display: inline-block ;
+    background: transparent ;
+
+    height: 45px ; line-height: 45px ;
+    width: 140px ;
+
+    margin: 0 10px 0 0 ;
+    padding: 0 ;
+
+    border-top: none ;
+    border-bottom: none ;
+
+    border-left: solid 1px rgba(200,200,200,0.5) ;
+    border-right: solid 1px rgba(200,200,200,0.5) ;
+
+    cursor: pointer ;
+
+    color: darkgray ;
+    font-size: 12px ;
+    font-family: Aller, monospace ;
+    text-decoration: none ;
+}
+
+:focus {
+    outline: none ;
+}
+
+header a.button-register:hover {
+    background: rgba( 60, 60, 60, 0.5 ) ;
+}
+
+menu {
+    background-color: white ;
+    width: 100% ;
+    height: 60px ;
+
+    text-align: center ;
+}
+
+.menu-content {
+    background-color: white ;
+
+    width: 960px ;
+    height: 100% ;
+
+    position: relative ;
+    display: inline-block ;
+}
+
+ul.menu-menu {
+    list-style: none ;
+
+    position: absolute ;
+    left: 10px ;
+}
+
+.menu-menu li {
+    display: inline-block
+}
+
+.menu-menu li a {
+    border-left: 1px solid rgba( 200, 200, 200, 0.5 ) ;
+
+    font-size: 16px ; font-family: Aller, monospace ;
+
+    display: inline-block ;
+    padding: 20px 23px 20px 23px ;
+    text-align: center ;
+
+    cursor: pointer ;
+}
+
+.menu-menu li:last-child a {
+    border-right: 1px solid rgba( 200, 200, 200, 0.5 ) ;
+}
+
+.menu-menu li:hover a {
+    background: rgba( 250, 250, 250, 1 ) ;
+    text-shadow: 0 0 3px white ;
+}
+
+.menu-user-div {
+    position: absolute ;
+    right: 0 ;
+    display: inline-block ;
+
+    height: 100% ;
+    width: 220px ;
+
+    margin: 0 10px 0 0 ;
+    padding: 0 ;
+}
+
+.menu-wishlist,
+.menu-cart {
+    position: relative ;
+    float: right ;
+    vertical-align: middle ;
+
+    width: 89px ;
+    height: 100% ;
+
+    border-left: 1px solid rgba( 200, 200, 200, 0.5 ) ;
+
+    cursor: pointer ;
+}
+
+.menu-cart {
+    border-right: 1px solid rgba( 200, 200, 200, 0.5 ) ;
+}
+
+.menu-wishlist:hover,
+.menu-cart:hover {
+    background: rgba( 250, 250, 250, 1 ) ;
+    text-shadow: 0 0 1px darkgray ;
+}
+
+.menu-cart-symbol,
+.menu-wishlist-symbol {
+    display: inline-block ;
+    position: relative ;
+    line-height: 60px ;
+    margin-right: 25px ;
+
+    color: dimgray ; font-size: 18px ;
+    z-index: 1 ;
+}
+
+.menu-cart-symbol:after,
+.menu-wishlist-symbol:after {
+    width: 21px ; height: 21px ;
+    border-radius: 3px ;
+
+    font-size: 12px ; color: white ;
+    line-height: 20px ; text-align: center ;
+
+    position: absolute ;
+    top: 19px ; left: 23px ;
+
+    z-index: -1 ;
+}
+
+.menu-cart-symbol:after {
+    background: rgb( 87, 197, 160 ) ;
+    content: '0' ;
+}
+
+.menu-wishlist-symbol:after {
+    background: rgb( 150, 150, 150 ) ;
+    content: '30' ;
+}
+
+.top {
+    background: url('assets/top_bg_repeat.png') repeat ;
+    width: 100% ;
+    height: 460px ;
+
+    text-align: center ;
+}
+
+.top-content {
+    background: url('assets/top_bg_repeat.png') repeat ;
+
+    width: 960px ;
+    height: 460px ;
+
+    position: relative ;
+    display: inline-block ;
+}
+
+.top-img {
+    margin-left: -540px ;
+
+    width: 700px ;
+    height: 460px ;
+
+    display: inline-block ;
+}
+
+.top-subcontent {
+    width: 380px ;
+    height: 295px ;
+
+    position: absolute ;
+    right: 55px ; top: 65px ;
+    display: inline-block ;
+}
+
+.top-item-price {
+    width: 65px ; height: 43px ;
+    background: rgb( 87, 197, 160 ) ;
+
+    padding-top: 24px ;
+
+    cursor: default ;
+}
+
+.top-item-price p {
+    color: white ; font-size: 13px ; font-family: AllerBold, monospace ;
+
+    cursor: default ;
+}
+
+.top-item-desc {
+    margin-top: 10px ;
+
+    width: 380px ;
+    height: 180px ;
+
+    text-align: left ;
+}
+
+.top-item-desc p.title {
+    color: black ; font-size: 40px ; font-family: AllerLight, monospace ;
+}
+
+.top-item-desc p.desc {
+    margin-top: 2px ;
+    color: black ; font-size: 20px ; font-family: AllerLight, monospace ;
+}
+
+.top-action-menu {
+    float: left ;
+    display: inline-block ;
+    margin-top: 15px ;
+}
+
+.top-action-menu li {
+    display: inline-block ;
+
+    width: 40px ; height: 28px ;
+    background: white ;
+
+    margin-right: 2px ;
+    padding-top: 12px ;
+
+    cursor: pointer ;
+}
+
+.top-action-menu li i {
+    color: dimgray ; font-size: 16px ;
+}
+
+.top-action-menu li:nth-child(1) i {
+    margin-left: 1px ;
+}
+
+.top-action-menu li:nth-child(3) i {
+    margin-left: 3px ;
+}
+
+.top-action-menu li:hover i {
+    color: rgb( 87, 197, 160 ) ;
+}
+
+.top-action-menu :last-child {
+    margin-right: 0 ;
+}
+
+.nav {
+    background: rgb( 46, 46, 46 ) ;
+    width: 100% ;
+    height: 90px ;
+
+    text-align: center ;
+}
+
+.nav-content {
+    background-color: rgb( 46, 46, 46 ) ;
+
+    width: 960px ;
+    height: 90px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.toggle-pos {
+    margin-top: 5px ;
+
+    background-color: black ;
+
+    width: 960px ;
+    height: 9px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: left ;
+}
+
+.nav-content .toggle-borders {
+    position: absolute ;
+    top: 5px ; left : 4px ;
+    height: 8px ;
+}
+
+.nav-content .toggle-borders li {
+    width: 2px ; height: 5px ; margin-top: 2px ;
+    background: rgb(46,46,46) ;
+    margin-left: 190px ;
+
+    display: inline-block ;
+}
+
+.toggle-pos ul li:first-child {
+    margin-left: 195px ;
+}
+
+.toggle {
+    background-color: rgb( 87, 197, 160 ) ;
+
+    width: 180px ;
+    height: 5px ;
+
+    position: absolute ;
+    top: 7px ; left: 10px ;
+    display: inline-block ;
+
+    transition: 0.2s linear ;
+}
+
+input[type="radio"] {
+    width: 191px ; height: 70px ;
+
+    position: absolute ; z-index: 1 ;
+    top: 17px ;
+
+    opacity: 0 ;
+    cursor: pointer ;
+}
+
+input[type="radio"]:nth-child(1) {
+    left: 0 ;
+}
+input[type="radio"]:nth-child(2) {
+    left: 191px ;
+}
+input[type="radio"]:nth-child(3) {
+    left: 382px ;
+}
+input[type="radio"]:nth-child(4) {
+    left: 573px ;
+}
+input[type="radio"]:nth-child(5) {
+    left: 764px ;
+}
+
+.nav-content input[type="radio"]:nth-child(1):checked ~ ul li:nth-child(1) p,
+.nav-content input[type="radio"]:nth-child(2):checked ~ ul li:nth-child(2) p,
+.nav-content input[type="radio"]:nth-child(3):checked ~ ul li:nth-child(3) p,
+.nav-content input[type="radio"]:nth-child(4):checked ~ ul li:nth-child(4) p,
+.nav-content input[type="radio"]:nth-child(5):checked ~ ul li:nth-child(5) p {
+    color: white ;
+}
+
+.nav-content input[type="radio"]:nth-child(1):hover:not(:checked) ~ ul li:nth-child(1) p,
+.nav-content input[type="radio"]:nth-child(2):hover:not(:checked) ~ ul li:nth-child(2) p,
+.nav-content input[type="radio"]:nth-child(3):hover:not(:checked) ~ ul li:nth-child(3) p,
+.nav-content input[type="radio"]:nth-child(4):hover:not(:checked) ~ ul li:nth-child(4) p,
+.nav-content input[type="radio"]:nth-child(5):hover:not(:checked) ~ ul li:nth-child(5) p {
+    color: rgb(200,200,200) ;
+}
+
+.nav-content input[type="radio"]:nth-child(1):checked ~ .toggle {
+    left: 10px ;
+}
+.nav-content input[type="radio"]:nth-child(2):checked ~ .toggle {
+    left: 201px ;
+}
+.nav-content input[type="radio"]:nth-child(3):checked ~ .toggle {
+    left: 392px ;
+}
+.nav-content input[type="radio"]:nth-child(4):checked ~ .toggle {
+    left: 583px ;
+}
+.nav-content input[type="radio"]:nth-child(5):checked ~ .toggle {
+    left: 774px ;
+}
+
+.nav-menu {
+    margin-top: 10px ;
+
+    width: 955px ;
+    height: 70px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: left ;
+}
+
+.nav-menu li {
+    background: transparent ;
+
+    width: 191px ; height: 70px ;
+
+    display: inline-block ;
+    text-align: center ;
+}
+
+.nav-menu li p {
+    color: rgb(151,151,151) ; font-family: Aller, monospace ;
+}
+
+.nav-menu li .title {
+    font-size: 18px ;
+
+    margin-top: 7px ;
+}
+
+.nav-menu li .desc {
+    font-size: 12px ;
+}
+
+.specials {
+    background: rgb( 36, 36, 36 ) ;
+    width: 100% ;
+    height: 230px ;
+
+    text-align: center ;
+    display: inline-block ;
+    position: relative ;
+}
+
+.specials-content {
+    /*background-color: rgb( 36, 36, 36 ) ;*/
+    background-color: rgb( 36, 36, 36 ) ;
+
+    width: 960px ;
+    height: 230px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.specials-content ul {
+    height: 180px ; width: auto ;
+}
+
+.specials-content ul li {
+
+    display: inline-block ;
+
+    width: 300px ; height: 180px ;
+    margin-top: 25px ; margin-left: 20px ;
+
+    position: relative ;
+
+    text-align: center ;
+
+    cursor: pointer ;
+}
+
+.specials-content ul li:first-child {
+    margin-left: 0 ;
+}
+
+.specials-content ul li img {
+    position: absolute ;
+    left: 0 ;
+}
+
+.specials-content ul li .bg {
+    position: absolute ;
+    left: 0 ;
+
+    width: 300px ; height: 180px ;
+
+    background: rgb( 0, 0, 0 ) ;
+    opacity: 0 ;
+
+    transition: 0.5s linear ;
+}
+
+.specials-content ul li p {
+    width: auto ; height: 20px ;
+
+    background: rgba(0,0,0,0.7) ;
+
+    position: relative ; display: inline-block ;
+    margin-top: 60px ;
+
+    color: white ; font-size: 25px ; font-family: AllerLight, monospace ;
+    padding: 15px 40px 25px 40px ;
+
+    z-index: 10 ;
+}
+
+.specials-content ul li:hover > a .bg {
+    opacity: 0.3 ;
+}
+
+.products {
+    background: rgb( 235, 231, 223 ) ;
+    width: 100% ;
+    height: 1000px ;
+
+    text-align: center ;
+}
+
+.products-content {
+    background: rgb( 235, 231, 223 ) ;
+    width: 960px ;
+    height: 1000px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.products-subcontent {
+    width: 960px ;
+    height: 390px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.products-subcontent .products-top {
+    padding-top: 30px ; padding-left: 10px ; padding-right: 10px ;
+
+    height: 60px ; width: 940px;
+}
+
+.products-subcontent .products-top p {
+    color: black ; font-size: 25px ; font-family: AllerLight, monospace ;
+
+    display: inline-block ;
+    float: left ;
+}
+
+.products-subcontent .products-top button {
+    color: rgb(188,181,167) ; font-size: 25px ; font-family: AllerLight, monospace ;
+    background: transparent ;
+
+    outline: none ;
+    border: 1px solid rgb(188,181,167) ;
+
+    width: 100px ; height: 30px ;
+    display: inline-block ;
+    float: right ;
+
+    text-align: center ; position: relative ;
+    cursor: pointer ;
+}
+
+.products-subcontent .products-top button:hover {
+    background: rgba(200,200,200,0.1) ;
+}
+
+.products-subcontent .products-top button p {
+    color: rgb(188,181,167) ; font-size: 14px ; font-family: AllerBold, monospace ;
+    margin-left: 20px ;
+}
+
+.products-subcontent .products-bottom {
+    width: 960px ; height: 280px ;
+}
+
+.products-subcontent .products-bottom>li {
+
+    width: 300px ; height: 270px ;
+
+    display: inline-block ;
+    background: white ;
+
+    margin-left: 20px ;
+
+    position: relative ;
+}
+
+.products-subcontent .products-bottom>li:first-child {
+    margin-left: 0 ;
+}
+
+.products-subcontent .products-bottom>li img {
+    width: 300px ; height: 220px ;
+}
+
+.products-content .products-bottom>li .products-br {
+    width: 300px ; height: 1px ;
+    background: rgb( 204, 204, 204 ) ;
+}
+
+.products-content .products-bottom>li p {
+    color: black ; font-size: 18px ; font-family: Aller, monospace ;
+
+    margin-top: 12px ; margin-right: 35px ;
+
+    transition: 0.2s linear ;
+}
+
+.products-content .products-bottom>li:after {
+    cursor: default ;
+
+    width: 65px ; height: 43px ;
+
+    font-size: 12px ; color: white ;
+    line-height: 20px ; text-align: center ;
+    padding-top: 22px ;
+
+    position: absolute ;
+    bottom: 0 ; left: 10px ;
+
+    z-index: 5 ;
+}
+
+.products-content .products-bottom>li:after {
+    background: rgb( 87, 197, 160 ) ;
+    content: '$145,99' ;
+}
+
+.products-content .arrivals .products-bottom>li:nth-child(2):before,
+.products-content .bestsellers .products-bottom>li:nth-child(3):before {
+    cursor: default ;
+
+    width: 65px ;
+
+    font-size: 13px ; color: white ; font-family: Aller, monospace ;
+
+    line-height: 20px ; text-align: center ;
+
+    position: absolute ;
+    top: 0 ; right: 10px ;
+
+    z-index: 5 ;
+}
+
+.products-content .arrivals .products-bottom>li:nth-child(2):before {
+    height: 43px ; padding-top: 22px ;
+
+    background: black ;
+    content: 'ON SALE' ;
+}
+
+.products-content .bestsellers .products-bottom>li:nth-child(3):before {
+    height: 51px ; padding-top: 14px ;
+
+    background: rgb(242, 126, 72) ;
+    content: 'OUT OF STOCK' ;
+}
+
+.products-content .products-bottom>li:hover > .sub-action-menu {
+    opacity: 1 ;
+}
+
+.products-content .products-bottom>li:hover > p {
+    opacity: 0 ;
+}
+
+.sub-action-menu {
+    background: white ;
+
+    float: left ;
+    margin-top: 15px ;
+
+    position: absolute ; display: inline-block ;
+    bottom: 5px ; right: 0 ;
+    width: 250px ;
+
+    transition: 0.4s linear ;
+    opacity: 0 ;
+}
+
+.sub-action-menu li {
+    display: inline-block ;
+
+    width: 40px ; height: 28px ;
+    background: white ;
+
+    margin-right: 2px ;
+    padding-top: 12px ;
+
+    cursor: pointer ;
+}
+
+.sub-action-menu li:first-child {
+    margin-left: 20px ;
+}
+
+.sub-action-menu li i {
+    color: dimgray ; font-size: 16px ;
+}
+
+.sub-action-menu li:nth-child(1) i {
+    margin-left: 1px ;
+}
+
+.sub-action-menu li:nth-child(3) i {
+    margin-left: 3px ;
+}
+
+.sub-action-menu li:hover i {
+    color: rgb( 87, 197, 160 ) ;
+}
+
+.sub-action-menu :last-child {
+    margin-right: 0 ;
+}
+
+.best-seller-content {
+    background-color: rgba( 215, 221, 213, 0.5 ) ;
+
+    width: 960px ;
+    height: 360px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.products-br {
+    background-color: rgb( 188, 181, 167 ) ;
+
+    width: 960px ;
+    height: 1px ;
+
+    position: relative ;
+    display: inline-block ;
+}
+
+.addon-content {
+    width: 960px ;
+    height: 250px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.products-subcontent .products-bottom {
+    width: 960px ; height: 280px ;
+}
+
+.products-subcontent .products-bottom>li {
+
+    width: 300px ; height: 270px ;
+
+    display: inline-block ;
+    background: white ;
+
+    margin-left: 20px ;
+
+    position: relative ;
+}
+
+.products-subcontent .products-bottom>li:first-child {
+    margin-left: 0 ;
+}
+
+.addon-content>ul {
+    display: inline-table ;
+
+    margin-top: 25px ;
+
+    width: 940px ; height: 180px ;
+
+    position: relative ;
+}
+
+.addon-content>ul>li {
+    height: 180px ; width: 180px ;
+
+    background: rgb(223,219,212) ;
+
+    border-right: 20px solid rgb( 235, 231, 223 ) ;
+
+    display: table-cell ; position: relative ;
+    vertical-align: middle ;
+    padding-left: 15px ;
+}
+
+.addon-content>ul>li:last-child {
+    width: 400px ;
+    border: none ;
+}
+
+.addon-content>ul>li:last-child {
+    margin-right: 0 ;
+}
+
+.addon-content>ul>li>a:hover>p.title {
+    text-decoration: underline ;
+}
+
+.addon-content>ul>li>p,
+.addon-content>ul>li>a>p {
+    width: 180px ;
+
+    text-align: left ;
+}
+
+.addon-content>ul>li>a>p>br {
+   line-height: 20px ;
+}
+
+.addon-content>ul>li>p.title,
+.addon-content>ul>li>a>p.title {
+    font-size: 14px ; color: black ; font-family: AllerBold, monospace ;
+    padding-bottom: 10px ;
+}
+
+.addon-content>ul>li>a>p.desc,
+.addon-content>ul>li>a>p.desc>i {
+    font-size: 12px ; color: black ; font-family: Aller, monospace ;
+}
+
+.addon-content>ul>li .addon-news {
+    padding-top: 5px ; padding-bottom: 5px ;
+}
+
+.addon-content>ul>li .addon-news li {
+    display: block ; position: relative ;
+
+    text-align: left ;
+    padding-left: 45px ;
+}
+
+.addon-content>ul>li .addon-news li:hover p.title {
+    text-decoration: underline ;
+}
+
+.addon-content>ul>li .addon-news li:before {
+    width: 35px ; height: 26px ;
+
+    font-size: 11px ; color: white ; font-family: Aller, monospace ;
+    line-height: 10px ; text-align: center ;
+    padding-top: 9px ;
+
+    position: absolute ;
+    top: 0 ; left: 0 ;
+
+    background: rgb( 87, 197, 160 ) ;
+    content: 'APR 01' ;
+
+    cursor: pointer ;
+}
+
+.addon-content>ul>li .addon-news li:first-child {
+    margin-bottom: 15px ;
+}
+
+.addon-content>ul>li .addon-news li .title {
+    font-size: 14px ; color: black ; font-family: AllerBold, monospace ;
+}
+
+.addon-content>ul>li .addon-news li .desc {
+    font-size: 12px ; color: black ; font-family: Aller, monospace ;
+}
+
+.pre-footer {
+    background: rgb( 36, 36, 36 ) ;
+    width: 100% ;
+    height: 365px ;
+
+    text-align: center ;
+}
+
+.pre-footer-top {
+    background: rgb( 36, 36, 36 ) ;
+
+    width: 960px ;
+    height: 246px ;
+
+    position: relative ;
+    display: inline-block ;
+
+    text-align: center ;
+}
+
+.pre-footer-widgets {
+    width: 900px ;
+    height: 246px ;
+
+    position: relative ;
+    display: inline-table ;
+}
+
+.pre-footer-widgets li {
+    width: 290px ; height: 246px ;
+    margin-right: 15px ;
+
+    padding-left: 20px ;
+
+    position: relative ;
+    display: table-cell ;
+    vertical-align: middle ;
+}
+
+.pre-footer-widgets .text-widget p,
+.pre-footer-widgets .twitter-widget p,
+.pre-footer-widgets .flickr-widget p {
+    text-align: justify ;
+    width: 250px ;
+}
+
+.pre-footer-widgets .text-widget p.title,
+.pre-footer-widgets .twitter-widget p.title,
+.pre-footer-widgets .flickr-widget p.title {
+    font-size: 14px ; color: rgb(125,125,125) ; font-family: Aller, monospace ;
+    padding-bottom: 15px ;
+}
+
+.pre-footer-widgets .flickr-widget p.title {
+    margin-left: 20px ;
+}
+
+.pre-footer-widgets .text-widget p.desc,
+.pre-footer-widgets .twitter-widget p.desc,
+.pre-footer-widgets .twitter-widget p.desc mark.nickname,
+.pre-footer-widgets .twitter-widget p.desc mark.date {
+    font-size: 12px ; color: rgb(164,164,164) ; font-family: AllerItalic, monospace ;
+}
+
+.pre-footer-widgets .text-widget p.desc {
+    padding-bottom: 20px ;
+}
+
+.pre-footer-widgets .twitter-widget br {
+    line-height: 20px ;
+}
+
+mark {
+    background: none ;
+}
+
+.pre-footer-widgets .twitter-widget p.desc mark.nickname {
+    color: rgb( 87, 197, 160 ) ;
+}
+
+.pre-footer-widgets .twitter-widget p.desc mark.date {
+    color: rgb( 196, 197, 191 ) ;
+}
+
+.pre-footer-widgets .twitter-widget p.desc mark.nickname:hover {
+    text-decoration: underline ;
+    cursor: pointer ;
+}
+
+.pre-footer-widgets .flickr-widget img.flickr-photos {
+    float: left ; margin-left: 20px ;
+    pointer-events: auto ;
+    width: 245px ; height: 120px ;
+}
+
+.pre-footer-br {
+    background: rgb( 28, 28, 28 ) ;
+
+    width: 100% ;
+    height: 1px ;
+
+    position: relative ;
+    display: inline-block ;
+}
+
+.pre-footer-br-inside {
+    background: rgb( 28, 28, 28 ) ;
+
+    width: 960px ;
+    height: 1px ;
+}
+
+.pre-footer-bottom {
+    background: rgb( 36, 36, 36 ) ;
+
+    width: 960px ;
+    height: 118px ;
+
+    position: relative ;
+    text-align: center ;
+    display: inline-block ;
+}
+
+.newsletter-signup {
+    float: left ;
+    height: 118px ; width: 300px ;
+    margin-left: 50px ;
+
+    display: inline-table ; position: relative ;
+}
+
+.newsletter-signup-content {
+    display: table-cell ;
+    vertical-align: middle ;
+    text-align: left ;
+}
+
+.newsletter-signup input {
+    color: rgb( 166, 166, 166 ) ; font-size: 12px ; font-family: AllerItalic, monospace ;
+    display: inline ;  position: relative ;
+}
+
+.newsletter-signup input[type="email"] {
+    background: rgb( 46, 46, 46 ) ;
+    border: none ;
+    height: 35px ; width: 200px ;
+    padding-left: 15px ;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.newsletter-signup input[type="submit"] {
+    color: transparent ;
+    background: rgb( 125, 125, 125 ) ;
+    border: none ;
+    height: 35px ; width: 35px ; line-height: 34px ;
+
+    cursor: pointer ;
+}
+
+input[type="submit"]:hover,
+i.submit:hover ~ input[type="submit"] {
+    background: rgb( 105, 105, 105 ) ;
+}
+
+i.submit {
+    color: rgb( 36, 36, 36 ) ; font-size: 26px ;
+    top: 44px; left: 229px ;
+    position: absolute ;
+
+    z-index: 5 ;
+
+    cursor: pointer ;
+}
+
+.socials {
+    margin-right: 50px ;
+
+    float: right ;
+
+    display: inline-table ;
+
+    height: 118px ;
+}
+
+.socials-content {
+    display: table-cell ;
+    vertical-align: middle ;
+}
+
+.socials li {
+    width: 35px ; height: 35px ; line-height: 49px ;
+    background: rgb(46,46,46) ;
+
+    display: inline-block ; text-align: center ;
+
+    margin-left: 10px ;
+
+    cursor: pointer ;
+}
+
+.socials li:hover {
+    background: rgb(56,56,56) ;
+}
+
+.socials i {
+    font-size: 20px ; color: rgb(125,125,125) ;
+}
+
+footer {
+    background: rgb( 46, 46, 46 ) ;
+    width: 100% ;
+    height: 90px ;
+
+    text-align: center ;
+}
+
+.footer-content {
+    background: rgb(46, 46, 46);
+    width: 960px;
+    height: 90px;
+
+    position: relative;
+    display: inline-table;
+
+    text-align: center;
+}
+
+.footer-copyright {
+    display: table-cell ;
+    vertical-align: middle ;
+    margin-left: 10px ;
+}
+
+.copyright-content {
+    display: inline ;
+}
+
+.footer-copyright p {
+    padding-left: 10px ;
+    text-align: left ;
+    font-size: 12px ; color: rgb(155,155,155) ;
+    font-family: Aller, monospace ;
+}
+
+.footer-copyright p:last-child {
+    margin-top: 2px ;
+}
+
+.footer-menu {
+    display: table-cell ;
+    vertical-align: middle ;
+}
+
+.footer-menu-content {
+    display: inline ;
+}
+
+.footer-menu ul {
+    float: right ;
+    margin-right: 10px ;
+}
+
+.footer-menu ul li {
+    display: inline-block ;
+}
+
+.footer-menu ul li a {
+    font-size: 12px ; color: rgb(155,155,155) ;
+    font-family: Aller, monospace ;
+}
+
+.footer-menu ul li a:hover {
+    text-decoration: underline ;
+}
+
+.footer-menu ul li:not(:last-child):after {
+    font-size: 12px ; color: rgb(155,155,155) ;
+    font-family: Aller, monospace ;
+    content: "/" ;
+    margin-left: 5px ; margin-right: 5px ;
+}
