@@ -773,7 +773,7 @@ input[type="radio"]:nth-child(5) {
     height: 43px ; padding-top: 22px ;
 
     background: black ;
-    content: 'ON SALE' ;
+    content: 'ON SALE!' ;
 }
 
 .products-content .bestsellers .products-bottom>li:nth-child(3):before {
@@ -1063,6 +1063,8 @@ input[type="radio"]:nth-child(5) {
 
 .pre-footer-widgets .twitter-widget br {
     line-height: 20px ;
+    display: block ;
+    margin: 10px 0 ;
 }
 
 mark {
@@ -1075,6 +1077,8 @@ mark {
 
 .pre-footer-widgets .twitter-widget p.desc mark.date {
     color: rgb( 196, 197, 191 ) ;
+    display: block ;
+    margin: 5px auto 10px auto ;
 }
 
 .pre-footer-widgets .twitter-widget p.desc mark.nickname:hover {
