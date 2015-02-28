@@ -1,20 +1,16 @@
 @font-face {
-    font-weight: 200;
     font-family: 'Aller';
     src: url('fonts/Aller_Rg.ttf');
 }
 @font-face {
-    font-weight: 200;
     font-family: 'AllerBold';
     src: url('fonts/Aller_Bd.ttf');
 }
 @font-face {
-    font-weight: 200;
     font-family: 'AllerItalic';
     src: url('fonts/Aller_It.ttf');
 }
 @font-face {
-    font-weight: 200;
     font-family: 'AllerLight';
     src: url('fonts/Aller_Lt.ttf');
 }
@@ -34,21 +30,12 @@
 }
 
 a {
-    z-index: 100 ;
-
     text-decoration: none ;
     color: inherit ;
 }
 
 img {
     pointer-events: none ;
-}
-
-html {
-    width: 100% ;
-    height: 100% ;
-
-    background: lightcyan ;
 }
 
 header {
@@ -62,7 +49,7 @@ header {
 .header-content {
     background-color: rgb( 36, 36, 36 ) ;
 
-    width: 960px ;
+    width: 960px ; overflow: hidden ;
     height: 100% ;
 
     position: relative ;
@@ -184,7 +171,7 @@ menu {
 .menu-content {
     background-color: white ;
 
-    width: 960px ;
+    width: 960px ; overflow: hidden ;
     height: 100% ;
 
     position: relative ;
@@ -437,7 +424,7 @@ ul.menu-menu {
 
 .nav-content .toggle-borders {
     position: absolute ;
-    top: 5px ; left : 4px ;
+    top: 5px ; left : 2px ;
     height: 8px ;
 }
 
@@ -477,7 +464,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:nth-child(1) {
-    left: 0 ;
+    left: 1px ;
 }
 input[type="radio"]:nth-child(2) {
     left: 191px ;
@@ -509,19 +496,19 @@ input[type="radio"]:nth-child(5) {
 }
 
 .nav-content input[type="radio"]:nth-child(1):checked ~ .toggle {
-    left: 10px ;
+    left: 8px ;
 }
 .nav-content input[type="radio"]:nth-child(2):checked ~ .toggle {
-    left: 201px ;
+    left: 199px ;
 }
 .nav-content input[type="radio"]:nth-child(3):checked ~ .toggle {
-    left: 392px ;
+    left: 391px ;
 }
 .nav-content input[type="radio"]:nth-child(4):checked ~ .toggle {
     left: 583px ;
 }
 .nav-content input[type="radio"]:nth-child(5):checked ~ .toggle {
-    left: 774px ;
+    left: 773px ;
 }
 
 .nav-menu {
@@ -649,7 +636,7 @@ input[type="radio"]:nth-child(5) {
 
 .products-content {
     background: rgb( 235, 231, 223 ) ;
-    width: 960px ;
+    width: 960px ; overflow: hidden ;
     height: 1000px ;
 
     position: relative ;
@@ -697,7 +684,7 @@ input[type="radio"]:nth-child(5) {
 }
 
 .products-subcontent .products-top button:hover {
-    background: rgba(200,200,200,0.1) ;
+    background: rgba(200,200,200,0.2) ;
 }
 
 .products-subcontent .products-top button p {
@@ -740,6 +727,10 @@ input[type="radio"]:nth-child(5) {
     margin-top: 12px ; margin-right: 35px ;
 
     transition: 0.2s linear ;
+}
+
+.products-content .products-bottom>li:last-child p {
+    margin-right: -20px ;
 }
 
 .products-content .products-bottom>li:after {
@@ -1013,7 +1004,7 @@ input[type="radio"]:nth-child(5) {
 .pre-footer-top {
     background: rgb( 36, 36, 36 ) ;
 
-    width: 960px ;
+    width: 960px ; overflow: hidden ;
     height: 246px ;
 
     position: relative ;
@@ -1117,7 +1108,7 @@ mark {
 .pre-footer-bottom {
     background: rgb( 36, 36, 36 ) ;
 
-    width: 960px ;
+    width: 960px ; overflow: hidden ;
     height: 118px ;
 
     position: relative ;
