@@ -437,7 +437,7 @@ ul.menu-menu {
 
 .nav-content .toggle-borders {
     position: absolute ;
-    top: 5px ; left : 4px ;
+    top: 5px ; left : 2px ;
     height: 8px ;
 }
 
@@ -477,7 +477,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:nth-child(1) {
-    left: 0 ;
+    left: 1px ;
 }
 input[type="radio"]:nth-child(2) {
     left: 191px ;
@@ -509,19 +509,19 @@ input[type="radio"]:nth-child(5) {
 }
 
 .nav-content input[type="radio"]:nth-child(1):checked ~ .toggle {
-    left: 10px ;
+    left: 8px ;
 }
 .nav-content input[type="radio"]:nth-child(2):checked ~ .toggle {
-    left: 201px ;
+    left: 199px ;
 }
 .nav-content input[type="radio"]:nth-child(3):checked ~ .toggle {
-    left: 392px ;
+    left: 391px ;
 }
 .nav-content input[type="radio"]:nth-child(4):checked ~ .toggle {
     left: 583px ;
 }
 .nav-content input[type="radio"]:nth-child(5):checked ~ .toggle {
-    left: 774px ;
+    left: 773px ;
 }
 
 .nav-menu {
